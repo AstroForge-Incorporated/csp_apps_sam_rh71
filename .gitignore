@@ -17,3 +17,5 @@
 **/*.KEIL/Objects
 **/*.KEIL/*.uvguix.*
 Gemfile*
+/apps/pwm/pwm_synchronous_channels/firmware/sam_rh71_ek.X/build/
+/apps/pwm/pwm_synchronous_channels/firmware/sam_rh71_ek.X/dist/

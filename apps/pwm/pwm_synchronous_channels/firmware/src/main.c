@@ -72,25 +72,25 @@ uint16_t pwm_period;
 void PWM0_CounterEventHandler(uint32_t status, uintptr_t context)
 {
     /* duty cycle values */
-    static uint16_t duty0 = 0U;
+    static uint16_t duty0 = 625U;
     static uint16_t duty1 = 2500U;
     static uint16_t duty2 = 5000U;
 
-    PWM0_ChannelDutySet(PWM_CHANNEL_0, duty0);
-    PWM0_ChannelDutySet(PWM_CHANNEL_1, duty1);
-    PWM0_ChannelDutySet(PWM_CHANNEL_2, duty2);
-    
-    /* Increment duty cycle values */
-    duty0 += DUTY_INCREMENT;
-    duty1 += DUTY_INCREMENT;
-    duty2 += DUTY_INCREMENT;
-    
-    if (duty0 > pwm_period)
-        duty0 = 0U;
-    if (duty1 > pwm_period)
-        duty1 = 0U;
-    if (duty2 > pwm_period)
-        duty2 = 0U;
+//    PWM0_ChannelDutySet(PWM_CHANNEL_0, duty0);
+//    PWM0_ChannelDutySet(PWM_CHANNEL_1, duty1);
+//    PWM0_ChannelDutySet(PWM_CHANNEL_2, duty2);
+//    
+//    /* Increment duty cycle values */
+////    duty0 += DUTY_INCREMENT;
+//    duty1 += DUTY_INCREMENT;
+//    duty2 += DUTY_INCREMENT;
+//    
+//    if (duty0 > pwm_period)
+//        duty0 = 0U;
+//    if (duty1 > pwm_period)
+//        duty1 = 0U;
+//    if (duty2 > pwm_period)
+//        duty2 = 0U;
 }
 
 // *****************************************************************************

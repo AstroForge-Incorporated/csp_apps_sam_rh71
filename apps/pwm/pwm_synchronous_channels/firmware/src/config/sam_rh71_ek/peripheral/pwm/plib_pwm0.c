@@ -74,12 +74,16 @@ void PWM0_Initialize (void)
                     | PWM_CMR_CES_SINGLE_EVENT | (PWM_CMR_DTE_Msk);
 
     /* PWM period */
-    PWM0_REGS->PWM_CH_NUM[0].PWM_CPRD = 1250U;
+    uint32_t freq_hz = 100000; // CHANGE ME
+    uint16_t cprd = 25000000 / freq_hz; // assuming 50 MHz PCLK
+    // CDTY in ticks: fraction of cprd
+    uint16_t cdty = 25; // CHANGE ME, calc is on page 1422 for center-aligned
+    PWM0_REGS->PWM_CH_NUM[0].PWM_CPRD = cprd;
 
     /* PWM duty cycle */
-    PWM0_REGS->PWM_CH_NUM[0].PWM_CDTY = 0U;
+    PWM0_REGS->PWM_CH_NUM[0].PWM_CDTY = cdty;
     /* Dead time */
-    PWM0_REGS->PWM_CH_NUM[0].PWM_DT = (100UL << PWM_DT_DTL_Pos) | (100U);
+    PWM0_REGS->PWM_CH_NUM[0].PWM_DT = (3UL << PWM_DT_DTL_Pos) | (3U);
          
     /* Enable counter event */
     PWM0_REGS->PWM_IER1 = 0x1;
