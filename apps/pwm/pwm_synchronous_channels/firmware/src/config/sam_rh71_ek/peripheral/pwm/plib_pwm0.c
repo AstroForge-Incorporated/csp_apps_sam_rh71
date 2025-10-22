@@ -74,7 +74,7 @@ void PWM0_Initialize (void)
                     | PWM_CMR_CES_SINGLE_EVENT | (PWM_CMR_DTE_Msk);
 
     /* PWM period */
-    uint32_t freq_hz = 100000; // CHANGE ME
+    uint32_t freq_hz = 100000; // CHANGE ME/
     uint16_t cprd = 25000000 / freq_hz; // assuming 50 MHz PCLK
     // CDTY in ticks: fraction of cprd
     uint16_t cdty = 25; // CHANGE ME, calc is on page 1422 for center-aligned

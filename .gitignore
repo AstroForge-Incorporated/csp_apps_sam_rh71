@@ -19,3 +19,6 @@
 Gemfile*
 /apps/pwm/pwm_synchronous_channels/firmware/sam_rh71_ek.X/build/
 /apps/pwm/pwm_synchronous_channels/firmware/sam_rh71_ek.X/dist/
+/apps/mcan/mcan_fd_operation_blocking/firmware/sam_rh71_ek.X/build/
+/apps/mcan/mcan_fd_operation_blocking/firmware/sam_rh71_ek.X/dist/
+.vscode/
